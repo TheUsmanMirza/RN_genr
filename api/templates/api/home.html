@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<button class="btn btn-success" onclick=num_generator()>Generate</button>
+
+<script>
+    function num_generator() {
+        $.ajax({
+            type: "POST",
+            url : "{% url 'api:generate-obj' %}",
+            success: function (data) {
+                debugger;
+                if (data['success']){
+                    window.location = "{% url 'api:detail' name='file_name' %}".replace(/file_name/, data['result']['name']);
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
