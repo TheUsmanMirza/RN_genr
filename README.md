@@ -37,3 +37,6 @@ RUN server
 ```
 python manage.py runserver
 ```
+
+#### Note 
+- this code was developed on basis of testing backend skills that why there is minimal frontend involved in that code.
